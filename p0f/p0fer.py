@@ -12,7 +12,7 @@ import sys
 # cnt keeps track of how many files we are running p0f on
 # can send it to /chucks_unzipped_data
 # chucks_data = "/home/tyler/unzipped_data/"
-if len(sys.argv) != 3:
+if len(sys.argv) != 4:
     print("Usage is p0fer.py <unzipped pcap FileLocation> <destination of unzipped files> <dst of the p0f log files>")
     sys.exit(1)
 pcapFilesLoc = sys.argv[1]
