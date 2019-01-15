@@ -9,8 +9,9 @@ if len(sys.argv) != 3:
     print("Usage is getASN.py <asnData.asn path> <location of p0f log files>")
     sys.exit(1)
 
-logFilesLoc = sys.argv[3]
 asnData = sys.argv[2]  # '/home/tyler/data_gathering/asnGeoData/asnData.asn'
+logFilesLoc = sys.argv[3]
+
 # asnFinalData = '/home/tyler/asnData/finalASNData.data'
 # def write_addr(type_of_addr):
 # get all ipv4
@@ -25,10 +26,13 @@ with open(asnData, 'w') as tmp:
 
 for file in os.listdir(logFilesLoc):
     # print(file)
+    # TODO may want to get rid of this requirement, may want to read files other then ones that are .p0f
     if file.endswith(".p0f"):
         # lets go through all the p0f files and get the IP addresses we find
         with open(file, 'r') as f:
             for line in f:
+                # TODO may want to expand this so we can get the ip from
+                # TODO more then just these .pof files (more usability outside this project)
                 ip_addr = re.search('cli=(.*?)/', line, re.DOTALL).group(1)
                 if ip_addr:
                     ip_set.add(ip_addr)

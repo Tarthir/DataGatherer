@@ -17,7 +17,7 @@ if len(sys.argv) != 3:
     sys.exit(1)
 pcapFilesLoc = sys.argv[1]
 destUnzipped = sys.argv[2]
-destLogLoc = sys.argv[3
+destLogLoc = sys.argv[3]
 
 def p0f_file(unzipped_f, cnt, f_in):
     with open (unzipped_f,'wb') as f_out:
