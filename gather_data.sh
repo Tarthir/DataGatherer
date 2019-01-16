@@ -11,7 +11,7 @@ python $WD/asnGeoData/getASN.py $WD/asnGeoData/asnData.asn $WD/p0f/p0fdata/ 2> $
 printf "Asn data ordered\n\n"
 printf "Getting full asn data now...\n"
 netcat whois.cymru.com 43 < $WD/asnGeoData/asnData.asn | sort -n > $WD/asnGeoData/asnFinalData.asn
-printf "Done! asnFinalData.data now holds all unique asn data\n\n"
+printf "Done! asnFinalData.asn now holds all unique asn data\n\n"
 printf "Getting mult_ipv data...\n"
 
 reader(){
